@@ -1,0 +1,37 @@
+<ion-view title="Single" hide-back-button="true">
+	<ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-ios7-gear" ui-sref="settings"></button>
+	</ion-nav-buttons>
+  	<ion-content has-header="true">
+  		<div id="home">
+  			<ion-refresher
+  			  pulling-text="Pull to refresh..."
+  			  on-refresh="getItems(true)">
+  			</ion-refresher>
+		  	<div class="list item-text-wrap">
+		  		<!-- <div class="item collection-item item-avatar"
+		  	    	collection-repeat="item in items | unique:'user.id'"
+      				collection-item-width="'100%'"
+      				collection-item-height="itemHeight(item)"
+      				ng-click="handleLink($event,'http://twitter.com/'+item.user.screen_name+'/status/'+item.id_str)"> -->
+      			<div class="item item-avatar" 
+      				 ng-repeat="item in items | unique:'user.id'" 
+      				 ng-click="handleLink($event,'http://twitter.com/'+item.user.screen_name+'/status/'+item.id_str)">
+		  	      <img ng-src="{{item.user.profile_image_url}}" 
+		  	      	   ng-click="handleLink($event,'http://twitter.com/'+item.user.screen_name)">
+		  	      <h2>
+		  	      	{{item.user.name}} 
+		  	      	<span>@{{item.user.screen_name}}</span>
+		  	      	<span href="#" class="time">{{item.time}}</span>
+		  	      </h2>
+		  	      <p compile="item.html"></p>
+		  	    </div>
+		  	</div>
+		  	<ion-infinite-scroll
+		  		ng-if="infinite"
+		  	    on-infinite="getItems()"
+		  	    distance="10%">
+		  	</ion-infinite-scroll>
+		</div>
+  	</ion-content>
+</ion-view>

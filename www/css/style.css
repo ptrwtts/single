@@ -1,0 +1,52 @@
+#main ion-nav-view {
+	background-color: #fff;
+}
+a {
+	text-decoration: none;
+	color: #0084B4;
+}
+#welcome {
+	text-align: center;
+	padding: 20px;
+}
+#welcome p {
+	padding: 20px 0 30px;
+	max-width: 320px;
+	margin:0 auto;
+}
+.collection-item {
+  left: 0;
+  right: 0;
+}
+.item {
+  padding: 7px;
+  padding-left: 70px;
+}
+.item-avatar > img:first-child {
+	top: 10px;
+	left: 10px;
+	max-width: 50px;
+	max-height: 50px;
+}
+.item h2 {
+	margin: 0 0 0px 0;
+	font-size: 14px;
+	line-height: 1.3;
+}
+.item p {
+	font-size: 14px;
+	line-height: 1.4;
+  	color: #292f33;
+}
+.item h2 {
+	font-weight: bold;
+}
+.item h2 span {
+	font-size: 13px;
+	font-weight: normal;
+	color: #8899a6;
+}
+.item h2 span.time {
+	float: right;
+	font-size: 12px
+}
